@@ -17,7 +17,6 @@
                        (rename-in racket/base
                                   [* mul]
                                   [+ plus]
-                                  [compose ∘]
                                   [... …])
                        racket/syntax
                        racket/match
@@ -38,6 +37,7 @@
   (provide xlist ^ ∞ once (for-syntax normalize-xlist-type))
 
   (begin-for-syntax
+    (define ∘ compose)
     (define-syntax ~^
       (pattern-expander
        (λ (stx)
